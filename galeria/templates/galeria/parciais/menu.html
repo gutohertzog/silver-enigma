@@ -1,0 +1,13 @@
+<nav>
+    <ul>
+        <li><a href="{% url 'admin:index' %}">ADMIN</a></li>
+        <li><a href="{% url 'galeria:index' %}">GALERIA</a></li>
+        <li><a href="{% url 'galeria:imagens' %}">IMAGENS</a></li>
+    </ul>
+</nav>
+<div>
+    <form action="{% url 'galeria:busca' %}">
+        <input type="text" name="buscando" placeholder="o que quer buscar?">
+        <button type="submit">enviar</button>
+    </form>
+</div>

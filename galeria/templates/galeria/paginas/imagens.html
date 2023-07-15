@@ -1,0 +1,15 @@
+{% extends 'galeria/paginas/base.html' %}
+
+{% block conteudo %}
+<h1>pagina imagens.html</h1>
+{% if imagens %}
+<ul>
+    {% for imagem in imagens %}
+    <li><a href="">{{imagem}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>nada foi enviado</p>
+{% endif %}
+{% endblock conteudo %}
+
