@@ -10,6 +10,7 @@ def view_imagens(request):
 
 def view_busca(request):
     imagens = Imagem.objects.all()
+    print(request)
 
     if 'buscando' in request.GET:
         nome = request.GET['buscando']
@@ -17,3 +18,4 @@ def view_busca(request):
             imagens = imagens.filter(nome__icontains=nome)
 
     return render(request, 'galeria/paginas/busca.html', context={'imagens':imagens})
+

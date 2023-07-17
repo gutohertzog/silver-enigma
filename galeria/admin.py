@@ -7,6 +7,7 @@ class ImagemAdmin(admin.ModelAdmin):
     search_fields = ('nome',)
     list_filter = ('categoria',)
     list_editable = ('eh_publicada',)
+    list_per_page = 10
 
 admin.site.register(Imagem, ImagemAdmin)
 
