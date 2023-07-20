@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from datetime import datetime
 
 class Imagem(models.Model):
@@ -14,6 +15,13 @@ class Imagem(models.Model):
     foto = models.ImageField(upload_to='imagem/%Y/%m/%d/', blank=True)
     eh_publicada = models.BooleanField(default=False)
     data_fotografia = models.DateTimeField(default=datetime.now, blank=False)
+    usuario = models.ForeignKey(
+        to = User,
+        on_delete = models.SET_NULL,
+        null = True,
+        blank = False,
+        related_name = 'user'
+    )
 
     def __str__(self):
         return self.nome

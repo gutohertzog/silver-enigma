@@ -1,0 +1,29 @@
+{% extends 'usuario/paginas/base.html' %}
+
+{% block conteudo %}
+<h1>pagina cadastro.html</h1>
+<section>
+
+    <form action="{% url 'usuario:cadastro' %}" method="POST">
+        {% csrf_token %}
+
+        {% for campo in formulario.visible_fields %}
+        <div>
+            <label for="{{ campo.id_for_label }}"><b>{{ campo.label }}</b></label>
+            {{ campo }}
+        </div>
+
+        {% for erro in campo.errors %}
+        <div>
+            {{ erro }}
+        </div>
+        {% endfor %}
+
+        {% endfor %}
+        <div>
+            <button type="submit">Criar sua Conta</button>
+        </div>
+    </form>
+</section>
+{% endblock conteudo %}
+

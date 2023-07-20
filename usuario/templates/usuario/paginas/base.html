@@ -8,6 +8,10 @@
         <link href="{% static 'galeria/css/estilos.css' %}" rel="stylesheet">
     </head>
     <body>
+        {% for mensagem in messages %}
+        <div><p>{{ mensagem }}</p></div>
+        {% endfor %}
+
         {% include 'global/parciais/menu.html' %}
         {% block conteudo %} {% endblock conteudo %}
         {% include 'galeria/parciais/footer.html' %}

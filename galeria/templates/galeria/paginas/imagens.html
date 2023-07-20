@@ -5,7 +5,7 @@
 {% if imagens %}
 <ul>
     {% for imagem in imagens %}
-    <li><a href="">{{imagem}}</a></li>
+    <li><a href="imagem/{{ imagem.id }}">{{ imagem }}</a></li>
     {% endfor %}
 </ul>
 {% else %}
