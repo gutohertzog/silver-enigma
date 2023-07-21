@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>galeria</title>
+        <title>{% block titulo %}PADRÃO{% endblock titulo %}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{% static 'galeria/css/estilos.css' %}" rel="stylesheet">
+        {% block css_js %} {% endblock css_js %}
     </head>
     <body>
         {% for mensagem in messages %}
@@ -17,4 +17,5 @@
         {% include 'galeria/parciais/footer.html' %}
     </body>
 </html>
+
 

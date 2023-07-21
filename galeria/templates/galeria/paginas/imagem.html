@@ -1,14 +1,16 @@
-{% extends 'galeria/paginas/base.html' %}
+{% extends 'global/paginas/base.html' %}
 
 {% block conteudo %}
 <h1>pagina imagens.html</h1>
-{% if imagem %}
+{% if imagem.eh_publicada %}
 <ul>
     <li>{{ imagem }}</li>
     <li>{{ imagem.legenda }}</li>
     <li>{{ imagem.descricao }}</li>
     <li>{{ imagem.categoria }}</li>
     <li><img width=200px src="{{ imagem.foto.url }}"></li>
+    <a href="{% url 'galeria:imagem_edita' imagem.id %}">Editar</a>
+    <a href="{% url 'galeria:imagem_apaga' imagem.id %}">Apagar</a>
 </ul>
 {% else %}
 <p>nada foi enviado</p>

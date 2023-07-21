@@ -1,0 +1,22 @@
+{% extends 'global/paginas/base.html' %}
+
+{% block conteudo %}
+<h1>pagina imagem_edita.html</h1>
+<p>sou um paragrafo do index</p>
+
+<form action="{% url 'galeria:imagem_edita' id_url %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for campo in formulario.visible_fields %}
+    <div>
+        <label for="{{ campo.id_for_label }}"><b>{{ campo.label }}</b></label>
+        {{ campo }}
+    </div>
+    {% endfor %}
+    <div>
+        <button type="submit">Salvar Item</button>
+    </div>
+</form>
+
+{% endblock conteudo %}
+
+
